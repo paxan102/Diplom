@@ -5,19 +5,21 @@ using UnityEngine;
 public class GameMain : MonoBehaviour
 {
     [SerializeField] CameraController cameraController;
-    [SerializeField] UIBase UI;
+    [SerializeField] UIManager UIManager;
+    [SerializeField] PointsManager pointsManager;
+    [SerializeField] Buyer[] buyers;
 
-    // Use this for initialization
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Confined;
 
-        UI.Init();
-        cameraController.Init(UI);
-        
+        UIManager.Init();
+        cameraController.Init(UIManager);
+        pointsManager.Init();
+        foreach(Buyer buyer in buyers)
+            buyer.Init(pointsManager);
 	}
 
-    // Update is called once per frame
     #region private
 
     #endregion

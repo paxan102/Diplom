@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIBase : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UIManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image blockForUI;
-
+    
     public void Init()
     {
         blockForUI.gameObject.SetActive(false);
